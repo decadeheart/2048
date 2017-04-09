@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2048</title>
+<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="2048.css">	
+</head>
+<body id="touch">
+	<div id="gameOver" class="modal">	
+	  <!-- 弹窗内容 -->
+		<div class="container" style="color:white;font-size: 40px">
+		<p>Game Over!</p>
+		<div>
+			<span>最终分数：</span>
+			<span id="finalScore"></span>
+		</div>
+		<button type="button" class="btn btn-primary" onclick="game.init()">重新开始</button>		
+		</div>
+	</div>
+	<div id="success" class="modal">	
+	  <!-- 弹窗内容 -->
+		<div class="container" style="color:white;font-size: 40px">
+		<p>游戏胜利！</p>
+		<div>
+			<span>最终分数：</span>
+			<span id="finalScore"></span>
+		</div>
+		<button type="button" class="btn btn-primary" onclick="game.init()">重新开始</button>		
+		</div>
+	</div>
+	<div class="col-md-4">
+		<h1>2048 game</h1>
+		<h3>How to play： Use your arrow keys to move the tiles. When two tiles with the same number touch, they merge into one!</h3>
+	</div>
+	<div class="col-md-4">
+		<div class="center">
+			<div id="g00" class="grid-cell"></div>
+			<div id="g01" class="grid-cell"></div>
+			<div id="g02" class="grid-cell"></div>
+			<div id="g03" class="grid-cell"></div>
+			
+			<div id="g10" class="grid-cell"></div>
+			<div id="g11" class="grid-cell"></div>
+			<div id="g12" class="grid-cell"></div>
+			<div id="g13" class="grid-cell"></div>
+			
+			<div id="g20" class="grid-cell"></div>
+			<div id="g21" class="grid-cell"></div>
+			<div id="g22" class="grid-cell"></div>
+			<div id="g23" class="grid-cell"></div>
+			
+			<div id="g30" class="grid-cell"></div>
+			<div id="g31" class="grid-cell"></div>
+			<div id="g32" class="grid-cell"></div>
+			<div id="g33" class="grid-cell"></div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<h1>
+		<button type="button" class="btn btn-primary" onclick="game.init()">重新开始</button>
+		 Score:
+		<span id="score"></span>
+		</h1>
+	</div>
+<script src="2048.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>
