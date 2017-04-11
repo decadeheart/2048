@@ -52,11 +52,9 @@ window.onload=function(){
     touchOn.prototype.end = function(e){
     	var slide = Math.abs(this.mPos.x-this.sPos.x)>Math.abs(this.mPos.y-this.sPos.y) ? 1 : 0;
     	if(slide==1){
-    		e.preventDefault();
     		this.mPos.x > this.sPos.x ? game.Right_move() : game.Left_move();
     	}
     	if(slide==0){
-    		e.preventDefault();
     		this.mPos.y > this.sPos.y ? game.Down_move() : game.Up_move();
     	}
         this.control = false;
