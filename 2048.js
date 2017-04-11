@@ -50,10 +50,15 @@ window.onload=function(){
         this.mPos.y = point.screenY;
     }
     touchOn.prototype.end = function(e){
-
-        this.config.dire_h  && (!this.control ? this.dire = null : this.mPos.x > this.sPos.x ? game.Right_move() : game.Left_move())
-        this.config.dire_h  || (!this.control ? this.dire = null : this.mPos.y > this.sPos.y ? game.Down_move() : game.Up_move())
-
+    	var slide = Math.abs(this.mPos.x-this.sPos.x)>Math.abs(this.mPos.y-this.sPos.y) ? 1 : 0;
+    	if(slide==1){
+    		e.preventDefault();
+    		this.mPos.x > this.sPos.x ? game.Right_move() : game.Left_move();
+    	}
+    	if(slide==0){
+    		e.preventDefault();
+    		this.mPos.y > this.sPos.y ? game.Down_move() : game.Up_move();
+    	}
         this.control = false;
     }
     var touchDemo=new touchOn({bind:document.getElementById("touch"),
